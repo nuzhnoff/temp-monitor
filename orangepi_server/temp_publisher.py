@@ -12,7 +12,7 @@ def get_cpu_temp():
     except Exception:
         return None
 
-client = mqtt.Client("OrangePi_Temp_Publisher")
+client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1, "OrangePi_Temp_Publisher")
 client.connect(MQTT_BROKER, MQTT_PORT, 60)
 client.loop_start()
 
